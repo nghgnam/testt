@@ -1,0 +1,118 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --primary-color: rgb(222, 136, 99);
+    --border-color: #dbdbdb;
+    --height-header: 120px;
+    --heigth-header-navbar: 37px;
+    --height-header-with-search: calc(var(--height-header)-var(var(--heigth-header-navbar)));
+    --star-gold-color: #ffce3e;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+
+/* animation */
+
+@keyframes SlowFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes Growth {
+    from {
+        transform: scale(var(--Growth-from));
+    }
+    to {
+        transform: scale(var(--Growth-to));
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    animation: SlowFadeIn linear 0.2s;
+}
+
+.modal__overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal__body {
+    margin: auto;
+    z-index: 1;
+    animation: Growth linear 0.1s;
+    --Growth-from: 0.7;
+    --Growth-to: 1;
+}
+
+
+/* btn style */
+
+.btn {
+    min-width: 160px;
+    height: 36px;
+    text-decoration: none;
+    border: none;
+    border-radius: 18px;
+    font-size: 1.4rem;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn-m {
+    min-width: 260px;
+    height: 36px;
+    text-decoration: none;
+    border: none;
+    border-radius: 18px;
+    font-size: 1.4rem;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn-l {
+    min-width: 360px;
+    height: 36px;
+    text-decoration: none;
+    border: none;
+    border-radius: 18px;
+    font-size: 1.4rem;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn.btn--priamry {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.btn.btn--disabled {
+    color: #949494;
+    cursor: default;
+    background-color: #c3c3c3;
+}
